@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 7</title>
+    <style>
+      .body-div{
+        display: flex;
+        justify-content: space-between;
+        margin-right: 10%;
+      }
+      .outer-sidenav {
+        border: 1px solid black;
+        padding: 5px;
+        margin-right: 90%;
+        margin-top: 2rem;
+        position: fixed;
+      }
+      .sidenav {
+        background-color: rgb(191, 231, 243);
+        width: 90%;
+        text-align: left;
+        padding: 5px;
+        bottom: 0;
+      }
+      #item {
+        color: blue;
+        padding: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        display: flex;
+      }
+      #item:hover {
+        background-color: rgb(247, 176, 90);
+      }
+      .v{
+        margin-left: 5px;
+        font-weight: bold;
+      }
+      .h{
+        margin-top: 9rem;
+        font-weight: bold;
+      }
+      .outer-horibar{
+        margin-top: 10rem;
+        width: 100%;
+        border: 1px solid black;
+        margin-top: 1rem;
+      }
+      .horibar{
+        display: flex;
+        justify-content: space-around;
+        width: 98.5%;
+        background-color: rgb(197, 197, 197);
+        margin: 5px;
+      }
+      #box{
+        color: blue;
+        padding: 15px;
+        font-weight: bold;
+        text-decoration: none;
+        display: flex;
+      }
+      #box:hover{
+        background-color: rgb(156, 154, 154);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="body-div">
+      <div class="v">Vertical Navigation Bar</div>
+      <div class="outer-sidenav">
+        <div class="sidenav">
+          <a href="#" id="item">Home</a>
+          <a href="#" id="item">Java</a>
+          <a href="#" id="item">CSS</a>
+          <a href="#" id="item">HTML</a>
+          <a href="#" id="item">Bootstrap</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="h">Horizontal Navigation bar</div>
+          <div class="outer-horibar">
+            <div class="horibar">
+              <a href="#" id="box">Home</a>
+              <a href="#" id="box">Java</a>
+              <a href="#" id="box">HTML</a>
+              <a href="#" id="box">CSS</a>
+              <a href="#" id="box">Bootstrap</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
