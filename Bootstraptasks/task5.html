@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Form Example</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .d-flex .form-group{
+        align-items: center;
+      }
+      .d-flex .form-group label {
+        font-weight: bold;
+        width: 35%;
+        margin-right: 10px;
+        padding-left: 1rem;
+      }
+    </style>
+  </head>
+  <body style="margin-left: 20rem;margin-right:20rem">
+    <div
+      class="container mt-5" style="background-color: #f7f7f7;">
+    <div class="d-flex">
+      <form class="was-validated">
+        <div class="form-group d-flex">
+          <label for="fname" class="form-label">First Name</label>
+          <div class="input-group">
+            <div class="input-group-prepend has-validation">
+              <span class="input-group-text" id="fn"
+                ><i class="fas fa-user"></i
+              ></span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="fname"
+              placeholder="First Name"
+              name="fname"
+              aria-describedby="fn"
+              required
+            />
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please supply your first name</div>
+          </div>
+        </div>
+        <div class="form-group d-flex">
+          <label for="lname" class="form-label">Last Name</label>
+          <div class="input-group">
+            <div class="input-group-prepend has-validation">
+              <span class="input-group-text" id="ln"
+                ><i class="fas fa-user"></i
+              ></span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="lname"
+              placeholder="Last Name"
+              name="lname"
+              aria-describedby="ln"
+              required
+            />
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please supply your last name</div>
+          </div>
+        </div>
+        <div class="form-group d-flex">
+          <label for="email" class="form-label">E-Mail</label>
+          <div class="input-group">
+            <div class="input-group-prepend has-validation">
+              <span class="input-group-text" id="e-mail"
+                ><i class="fas fa-envelope"></i
+              ></span>
+            </div>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="E-Mail Address"
+              name="email"
+              aria-describedby="e-mail"
+              required
+            />
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please supply your email address</div>
+          </div>
+        </div>
+        <div class="form-group d-flex">
+          <label for="phone" class="form-label">Phone #</label>
+          <div class="input-group">
+            <div class="input-group-prepend has-validation">
+              <span class="input-group-text" id="ph"
+                ><i class="fa fa-phone" aria-hidden="true"></i
+              ></span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="phone"
+              placeholder="(845)555-1212"
+              name="phone"
+              aria-describedby="ph"
+              required
+            />
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please supply your phone number</div>
+          </div>
+        </div>
+        <div class="form-group d-flex">
+          <label for="address" class="form-label">Address</label>
+          <div class="input-group">
+            <div class="input-group-prepend has-validation">
+              <span class="input-group-text" id="add"
+                ><i class="fas fa-home"></i
+              ></span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="address"
+              placeholder="Address"
+              name="address"
+              aria-describedby="add"
+              required
+            />
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">
+              Please supply your street address
+            </div>
+          </div>
+        </div>
+        <div class="form-group d-flex">
+          <label for="city" class="form-label">City</label>
+          <div class="input-group">
+            <div class="input-group-prepend has-validation">
+              <span class="input-group-text" id="cy"
+                ><i class="fas fa-home"></i
+              ></span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="city"
+              placeholder="City"
+              name="city"
+              aria-describedby="cy"
+              required
+            />
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please supply your city</div>
+          </div>
+        </div>
+        <div class="form-group d-flex">
+          <label for="state" class="form-label">State</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-server"></i></span>
+            </div>
+            <select class="form-control" id="state">
+              <option>Please select your state</option>
+              <option value="NY">New York</option>
+              <option value="CA">California</option>
+              <!-- Add more states as needed -->
+            </select>
+          </div>
+        </div>
+        <div class="form-group d-flex">
+          <label>Do you have hosting?</label>
+          <div class="hosting-options">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="hosting"
+                id="hostingYes"
+                value="yes"
+              />
+              <label class="form-check-label" for="hostingYes">Yes</label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="hosting"
+                id="hostingNo"
+                value="no"
+              />
+              <label class="form-check-label" for="hostingNo">No</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group d-flex">
+          <label for="projectDescription" class="form-label"
+            >Project Description</label
+          >
+          <div class="input-group">
+            <div class="input-group-prepend has-validation">
+              <span class="input-group-text" id="pd"
+                ><i class="fas fa-pencil-alt"></i
+              ></span>
+            </div>
+            <textarea
+              class="form-control"
+              id="projectDescription"
+              rows="3"
+              placeholder="Project Description"
+              aria-describedby="pd"
+            ></textarea>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-warning d-block"
+          style="margin-left: auto; margin-right: auto"
+        >
+          Send <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+    </div>
+  </body>
+</html>
