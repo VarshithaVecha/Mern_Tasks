@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      td label {
+        font-weight: bold;
+        padding: 5px;
+      }
+      td span {
+        margin-left: 10px;
+      }
+      #outer {
+        background-image: linear-gradient(
+          rgb(240, 240, 188),
+          rgb(247, 136, 247)
+        );
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .error {
+        color: rgb(216, 20, 20);
+        display: none;
+      }
+      .input-error {
+        border: 2px solid rgb(216, 20, 20);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer">
+      <div style="color: blue; text-align: center">
+        <h1>Registration form</h1>
+      </div>
+      <form id="myTable" onsubmit="return validateForm()">
+        <table>
+          <tr>
+            <td style="text-align: right">
+              <label for="fname">First Name</label>
+            </td>
+            <td>
+              <input type="text" id="fname" name="fname" style="width: 25rem" />
+            </td>
+            <td><span class="error" id="fnameError">POOR</span></td>
+          </tr>
+          <tr>
+            <td style="text-align: right">
+              <label for="lname">Last Name</label>
+            </td>
+            <td>
+              <input type="text" id="lname" name="lname" style="width: 25rem" />
+            </td>
+            <td><span class="error" id="lnameError">POOR</span></td>
+          </tr>
+          <tr>
+            <td style="text-align: right"><label for="email">Email</label></td>
+            <td>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                style="width: 25rem"
+              />
+            </td>
+            <td><span class="error" id="emailError">POOR</span></td>
+          </tr>
+          <tr>
+            <td style="text-align: right">
+              <label for="password">Password</label>
+            </td>
+            <td>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                style="width: 25rem"
+              />
+            </td>
+            <td><span class="error" id="pError">POOR</span></td>
+          </tr>
+          <tr>
+            <td style="text-align: right">
+              <label for="re-pwd">Re-enter Password</label>
+            </td>
+            <td>
+              <input
+                type="password"
+                id="re-pwd"
+                name="re-pwd"
+                style="width: 25rem"
+              />
+            </td>
+            <td><span class="error" id="repError">POOR OR MISMATCH</span></td>
+          </tr>
+          <tr>
+            <td style="text-align: right">
+              <label for="gender">Gender</label>
+            </td>
+            <td>
+              <input type="radio" name="gender" value="Male" id="male" />
+              <label for="male">Male</label>
+              <br />
+              <input type="radio" name="gender" value="Female" id="female" />
+              <label for="female">Female</label>
+            </td>
+            <td><span class="error" id="genderError">POOR</span></td>
+          </tr>
+          <tr>
+            <td style="text-align: right"><label for="age">Age</label></td>
+            <td>
+              <input type="text" id="age" name="age" style="width: 25rem" />
+            </td>
+            <td><span class="error" id="ageError">POOR</span></td>
+          </tr>
+          <tr>
+            <td style="text-align: right">
+              <label for="phn">Phone Number</label>
+            </td>
+            <td>
+              <input type="text" id="phn" name="phn" style="width: 25rem" />
+            </td>
+            <td><span class="error" id="phnError">POOR</span></td>
+          </tr>
+          <tr>
+            <td style="text-align: right"><label for="add">Address</label></td>
+            <td>
+              <textarea
+                name="address"
+                id="add"
+                style="width: 25rem; height: 15vh"
+              ></textarea>
+            </td>
+            <td><span class="error" id="addError">POOR</span></td>
+          </tr>
+          <tr>
+            <td style="text-align: right"><label for="state">State</label></td>
+            <td>
+              <input type="text" id="state" name="state" style="width: 25rem" />
+            </td>
+            <td><span class="error" id="stateError">POOR</span></td>
+          </tr>
+          <tr>
+            <td style="text-align: right">
+              <label for="country">Country</label>
+            </td>
+            <td>
+              <select name="country" id="country">
+                <option value="">Choose your country</option>
+                <option value="India">India</option>
+                <option value="America">America</option>
+              </select>
+            </td>
+            <td><span class="error" id="countryError">POOR</span></td>
+          </tr>
+          <tr>
+            <td style="text-align: right">
+              <label for="lk">Languages known</label>
+            </td>
+            <td colspan="2">
+              <input type="checkbox" name="language" value="English" />English
+              <input type="checkbox" name="language" value="Kannada" />Kannada
+              <input type="checkbox" name="language" value="Hindi" />Hindi
+              <input type="checkbox" name="language" value="Telugu" />Telugu
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input
+                type="checkbox"
+                checked
+                style="margin-left: 10px"
+                required
+              />
+              <span>Hereby I declare all the given details are true</span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: right">
+              <span>Log in to <a href="#">Ethnus</a> website</span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align: center">
+              <input
+                type="submit"
+                value="Register"
+                style="
+                  background-color: red;
+                  padding: 3px;
+                  border: 3px solid black;
+                  color: white;
+                  padding-right: 15px;
+                  padding-left: 15px;
+                  border-radius: 15px;
+                "
+              />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+    <script>
+      function validateForm() {
+        let isValid = true;
+
+        const fields = [
+          { id: "fname", errorId: "fnameError" },
+          { id: "lname", errorId: "lnameError" },
+          { id: "email", errorId: "emailError" },
+          { id: "password", errorId: "pError" },
+          { id: "re-pwd", errorId: "repError" },
+          { id: "age", errorId: "ageError" },
+          { id: "phn", errorId: "phnError" },
+          { id: "add", errorId: "addError" },
+          { id: "state", errorId: "stateError" },
+          { id: "country", errorId: "countryError" },
+          { id: "male", errorId: "genderError", type: "radio" },
+          { id: "female", errorId: "genderError", type: "radio" },
+        ];
+
+        fields.forEach((field) => {
+          const inputElement = document.getElementById(field.id);
+          const errorElement = document.getElementById(field.errorId);
+
+          if (
+            (field.type !== "radio" && !inputElement.value) ||
+            (field.type === "radio" &&
+              !document.querySelector('input[name="gender"]:checked'))
+          ) {
+            errorElement.style.display = "inline";
+            inputElement.classList.add("input-error");
+            isValid = false;
+          } else {
+            if (field.type !== "radio") {
+              errorElement.style.display = "none";
+              inputElement.classList.remove("input-error");
+            }
+          }
+        });
+
+        const password = document.getElementById("password").value;
+        const repwd = document.getElementById("re-pwd").value;
+
+        if (password !== repwd) {
+          const repError = document.getElementById("repError");
+          repError.style.display = "inline";
+          isValid = false;
+        } else {
+          const repError = document.getElementById("repError");
+          repError.style.display = "none";
+        }
+
+        return isValid;
+      }
+    </script>
+  </body>
+</html>

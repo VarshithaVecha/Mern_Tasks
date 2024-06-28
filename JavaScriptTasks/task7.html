@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            margin-top: 15%;
+            margin-left: 15%;
+        }
+        #btn1{
+            margin-left: 40%;
+            margin-right: 1%;
+        }
+    </style>
+</head>
+<body>
+        <img src="./image.png" alt="error" id="mytrain">
+        <br></br><br><br/><br><br/>
+        <h1>Click the following buttons to handle animation</h1>
+        <input type="button" id="btn1" value="Start" onclick="start()"/>
+        <input type="button"  value="Stop" onclick="stop()"/>
+        
+        
+    <script>
+        var animation;
+        function init(){
+            let mytrain = document.getElementById("mytrain");
+            mytrain.style.position = "absolute";
+            mytrain.style.left="0px";
+        }
+        window.onload = init;
+
+        function start(){
+            let mytrain = document.getElementById("mytrain");
+            mytrain.style.left = parseInt(mytrain.style.left) + 10 + "px";
+            animation = setTimeout(start,50);
+        }
+        function stop(){
+            let mytrain = document.getElementById("mytrain");
+            clearTimeout(animation);
+            mytrain.style.left = "paused";
+        }
+    </script>
+</body>
+</html>
